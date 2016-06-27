@@ -1,0 +1,295 @@
+{
+  "intents": [
+    {
+      "intent": "ReadAllIngredientsIntent",
+      "slots": [
+        {
+          "name": "IngredientAll",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+        {
+      "intent": "GetRecipeByNameIntent",
+      "slots": [
+        {
+          "name": "RecipeByName",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+            {
+      "intent": "GetRecipeByIngredientIntent",
+      "slots": [
+        {
+          "name": "Ingredient",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+        {
+      "intent": "ReadNextIngredientIntent",
+      "slots": [
+        {
+          "name": "IngredientsNext",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+        {
+      "intent": "ReadPreviousIngredientIntent",
+      "slots": [
+        {
+          "name": "IngredientsPrevious",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "ReadAllDirectionsIntent",
+      "slots": [
+        {
+          "name": "DirectionAll",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+        {
+      "intent": "ReadNextDirectionIntent",
+      "slots": [
+        {
+          "name": "DirectionNext",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+        {
+      "intent": "ReadPreviousDirectionIntent",
+      "slots": [
+        {
+          "name": "DirectionPrevious",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+ {
+      "intent": "HowMuchIntent",
+      "slots": [
+        {
+          "name": "GetQuantity",
+          "type": "LIST_OF_QUANTITIES"
+        },
+        {
+          "name": "Ingredient",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+     {
+      "intent": "EndIntent",
+      "slots": [
+
+        {
+          "name": "End",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+1/4
+One Quarter
+1/2
+One Half
+1/3
+One Third
+2/3
+Two Thirds
+3/4
+Three Quarters
+1
+One
+2
+Two
+3
+Three 
+4 
+Four
+5
+Five
+6
+Six
+1/4 Cup
+One Quarter Cup
+1/2 Cup
+One Half Cup
+3/4 Cup
+Three Quarters Cup
+1 Cup
+One Cup
+2 Cups
+Two Cups
+3 Cups
+Three Cups
+4 Cups
+Four Cups
+5 Cups
+Five Cups
+6 Cups 
+Six Cups
+7 Cups 
+Seven Cups
+8 Cups
+Eight Cups
+9 Cups 
+Nine Cups
+10 Cups
+Ten Cups
+1/8 Teaspoon
+One Eighth Teaspoon
+1/4 Teaspoon
+One Quarter Teaspoon
+1/2 Teaspoon
+One Half Teaspoon
+3/4 Teaspoon
+Three Quarters Teaspoon
+Teaspoon
+Tea spoon
+Table spoon
+Tablespoon
+1/2 Tablespoon
+One Half Tablespoon
+1/2 Table spoon
+
+ReadAllIngredientsIntent what are all ingredients
+ReadAllIngredientsIntent read all ingredients 
+ReadAllIngredientsIntent list all ingredients
+ReadAllIngredientsIntent all ingredients
+
+ReadNextIngredientIntent what is the next ingredient
+ReadNextIngredientIntent what's the next ingredient
+ReadNextIngredientIntent next ingredient
+ReadNextIngredientIntent go to next ingredient
+ReadNextIngredientIntent go forward to next ingredient
+
+
+ReadPreviousIngredientIntent what was the previous ingredient
+ReadPreviousIngredientIntent what was the last ingredient
+ReadPreviousIngredientIntent what was the previous ingredient
+
+ReadAllDirectionsIntent list all the directions
+ReadAllDirectionsIntent what are all the directions
+ReadAllDirectionsIntent read all the directions
+ReadAllDirectionsIntent go through all the directions
+
+ReadNextDirectionIntent what is the next step
+ReadNextDirectionIntent what is the next direction
+ReadNextDirectionIntent what's the next step
+ReadNextDirectionIntent what's the next direction
+ReadNextDirectionIntent what do I do next
+ReadNextDirectionIntent what's next
+ReadNextDirectionIntent what is next
+ReadNextDirectionIntent next step
+ReadNextDirectionIntent next direction
+
+ReadPreviousDirectionIntent what was the previous direction
+ReadPreviousDirectionIntent what was the previous step
+ReadPreviousDirectionIntent previous step
+ReadPreviousDirectionIntent previous direction
+
+
+HowMuchIntent how much {butter|Ingredient} do I need 
+HowMuchIntent how much {roast beef|Ingredient} do I need
+HowMuchIntent how much {cups of flour|Ingredient} do I need
+HowMuchIntent how much {tablespoons of baking soda|Ingredient} do I need
+HowMuchIntent how much {butter|Ingredient} 
+HowMuchIntent how much {roast beef|Ingredient} 
+HowMuchIntent how much {cups of sugar|Ingredient} 
+HowMuchIntent how much {teaspoons of baking soda|Ingredient} 
+HowMuchIntent how much {teaspoons of baking powder|Ingredient} 
+HowMuchIntent what quantity of {ham|Ingredient} do I need 
+HowMuchIntent what quantity of {chicken breasts|Ingredient} do I need 
+HowMuchIntent what quantity of {roasted pork shoulder|Ingredient} do I need 
+HowMuchIntent what quantity of {cups of chopped basil|Ingredient} do I need 
+HowMuchIntent what quantity of {ham|Ingredient} 
+HowMuchIntent what quantity of {roasted chicken|Ingredient} 
+HowMuchIntent what quantity of {sauteed spinach greens|Ingredient} 
+HowMuchIntent what quantity of {cups of chopped nuts|Ingredient} 
+HowMuchIntent how many {eggs|Ingredient} 
+HowMuchIntent how many {thyme sprigs|Ingredient}
+HowMuchIntent how many {ounces of butter|Ingredient} 
+HowMuchIntent how many {cups of chopped onions|Ingredient}
+HowMuchIntent how many {eggs|Ingredient} do I need
+HowMuchIntent how many {thyme sprigs|Ingredient} do I need
+HowMuchIntent how many {ounces of butter|Ingredient} do I need
+HowMuchIntent how many {cups of chopped onions|Ingredient} do I need
+
+
+GetRecipeByNameIntent find {fried chicken|RecipeByName}
+GetRecipeByNameIntent look up {chicken a la king|RecipeByName}
+GetRecipeByNameIntent {cheesecake|RecipeByName}
+GetRecipeByNameIntent look for {sushi|RecipeByName}
+
+AMAZON.HelpIntent Recipe Reader. You can find a recipe by name or ingredient then ask for specific ingredients or next steps. 
+
+GetRecipeByIngredientIntent get a recipe that contains {spinach|Ingredient}
+GetRecipeByIngredientIntent get a recipe with {eggs|Ingredient}
+GetRecipeByIngredientIntent get a recipe that includes {toasted almonds|Ingredient}
+GetRecipeByIngredientIntent get a recipe including {fresh picked basil|Ingredient}
+GetRecipeByIngredientIntent get a dish that contains {ham|Ingredient}
+GetRecipeByIngredientIntent get a dish with {pork|Ingredient}
+GetRecipeByIngredientIntent get a dish that includes {green beans|Ingredient}
+GetRecipeByIngredientIntent get a dish including {beef|Ingredient}
+GetRecipeByIngredientIntent get me a recipe that contains {steak|Ingredient}
+GetRecipeByIngredientIntent get me a recipe with {chicken|Ingredient}
+GetRecipeByIngredientIntent get me a recipe that includes {parmesean|Ingredient}
+GetRecipeByIngredientIntent get me a recipe including {pork tenderloin|Ingredient}
+GetRecipeByIngredientIntent get me a dish that contains {beef prime rib|Ingredient}
+GetRecipeByIngredientIntent get me a dish with {salted pork|Ingredient}
+GetRecipeByIngredientIntent get me a dish that includes {fresh mozzarella|Ingredient}
+GetRecipeByIngredientIntent get me a dish including {squid|Ingredient}
+GetRecipeByIngredientIntent find a recipe that contains {chicken|Ingredient}
+GetRecipeByIngredientIntent find a recipe with {chicken|Ingredient}
+GetRecipeByIngredientIntent find a recipe that includes {chicken|Ingredient}
+GetRecipeByIngredientIntent find a recipe including {chicken|Ingredient}
+GetRecipeByIngredientIntent find a dish that contains {chicken|Ingredient}
+GetRecipeByIngredientIntent find a dish with {chicken|Ingredient}
+GetRecipeByIngredientIntent find a dish that includes {chicken|Ingredient}
+GetRecipeByIngredientIntent find a dish including {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a recipe that contains {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a recipe with {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a recipe that includes {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a recipe including {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a dish that contains {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a dish with {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a dish that includes {chicken|Ingredient}
+GetRecipeByIngredientIntent find me a dish including {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a recipe that contains {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a recipe with {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a recipe that includes {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a recipe including {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a dish that contains {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a dish with {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a dish that includes {chicken|Ingredient}
+GetRecipeByIngredientIntent look up a dish including {chicken|Ingredient}
+
+EndIntent stop
+EndIntent end recipe reader
+EndIntent end reader
+EndIntent exit
+EndIntent alexa exit
+EndIntent stop recipe reader
+EndIntent recipe complete 
+EndIntent stop 
+EndIntent end recipe
+EndIntent end reader
+EndIntent cancel recipe reader
+EndIntent cancel recipe
+EndIntent cancel reader
