@@ -1,8 +1,8 @@
 from __future__ import print_function
 
-ingredients = ['peanut butter', 'jelly', 'bread']
-directions = ["spread peanut butter on one side of bread", "spread jelly on one side of other piece of bread",
-              "press the pieces of bread together so the peanut butter and jelly sides are together", "enjoy"]
+ingredients = ['2 table spoons peanut butter', '1 table spoon jelly', 'two slices of bread']
+directions = ['spread peanut butter on one side of bread', 'spread jelly on one side of other piece of bread',
+              'press the pieces of bread together so the peanut butter and jelly sides are together', 'enjoy']
 direction_index = 0
 ingredient_index = 0
 def lambda_handler(event, context):
@@ -52,7 +52,7 @@ def on_launch(launch_request, session):
 
 
 def on_intent(intent_request, session):
-    """ Called when the user specifies an intent for this skill """
+
 
     print("on_intent requestId=" + intent_request['requestId'] +
           ", sessionId=" + session['sessionId'])
@@ -60,19 +60,20 @@ def on_intent(intent_request, session):
     intent = intent_request['intent']
     intent_name = intent_request['intent']['name']
 
-    # Dispatch to your skill's intent handlers
+
+
     if intent_name == "ReadNextIngredientIntent":
         return read_next_ingredient(intent, session)
     elif intent_name == "ReadAllIngredientsIntent":
         return read_all_ingredients(intent, session)
     elif intent_name == "ReadNextDirectionIntent":
         return read_next_direction(intent, session)
-    elif intent_name == "ReadAllDirectionIntent":
-        return read_all_directions(intent, session)
     elif intent_name == "ReadPreviousDirectionIntent":
         return read_previous_direction(intent, session)
     elif intent_name == "ReadPreviousIngredientIntent":
         return read_previous_ingredient(intent, session)
+    # elif intent_name == "HowMuchIntent":
+    #     return how_much_ingredient(intent, session, )
     elif intent_name == "EndIntent":
         return handle_session_end_request()
     # else:
@@ -100,7 +101,7 @@ def get_welcome_response():
     card_title = "Welcome"
     speech_output = "Welcome to Noah's Recipe Reader.  " \
                     "With this skill, you can hear ingredients or directions. "\
-                    "You can ask for the next, previous or all ingredients or directions.  "\
+                    "You can ask for the next, previous or all ingredients, or get directions one at a time.  "\
 
     reprompt_text = None
 
@@ -112,9 +113,9 @@ def get_welcome_response():
 def handle_session_end_request():
     card_title = "Session Ended"
     speech_output = "Thank you for trying Noah's Recipe Reader. " \
-                    "Have a nice day! "
+                    "I hope you enjoyed this presentation of Noah's Amazon Echo Recipe Reader"\
+
     reprompt_text = None
-    # Setting this to true ends the session and exits the skill.
     should_end_session = True
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
@@ -176,33 +177,13 @@ def read_all_ingredients(intent, session):
     session_attributes = {}
     should_end_session = True
     reprompt_text = None
-    speech_output_list = []
+    speech_output_ingredients = []
     for i in ingredients:
-        speech_output_list.append(i)
-    speech_output = ','.join(speech_output_list)
-    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
-
-def read_all_directions(intent, session):
-    card_title = intent['name']
-    session_attributes = {}
-    should_end_session = True
-    reprompt_text = None
-    speech_output_list = []
-    for i in directions:
-        speech_output_list.append(i)
-    speech_output = ','.join(speech_output_list)
-    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
-
-
-def get_quantity(intent, session):
-    speech_output = "Which Ingredient would you like the quantity for?"
-    card_title = intent['name']
-    session_attributes = {}
-    should_end_session = True
-    reprompt_text = None
-
+        speech_output_ingredients.append(i)
+    speech_output = "Here are all the ingredients, " + ','.join(speech_output_ingredients)
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
+
 def read_previous_ingredient(intent, session):
     card_title = intent['name']
     session_attributes = {}
@@ -239,8 +220,18 @@ def read_previous_direction(intent, session):
 
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
-
-
+def how_much_ingredient(intent, session):
+    intent_value = intent['slots']['value']
+    card_title = intent['name']
+    session_attributes = {}
+    should_end_session = True
+    reprompt_text = None
+    if any(intent_value in ingredients):
+        speech_output = "This recipe has " + intent_value
+    else:
+        speech_output = "This ingredient is not in the recipe"
+    return build_response(session_attributes, build_speechlet_response(
+		    card_title, speech_output, reprompt_text, should_end_session))
 # --------------- Helpers that build all of the responses ----------------------
 
 
