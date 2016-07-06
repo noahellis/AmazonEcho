@@ -234,7 +234,7 @@ def how_much_ingredient(intent, session):
     for i in ingredients:
         if intent_value in i:
             speech_output = "This recipe has " + i
-            isFound = True
+            is_found = True
     if not isFound:
         speech_output = "This ingredient is not in the recipe"
 
