@@ -1,0 +1,29 @@
+{
+  "session": {
+    "sessionId": "SessionId.4e17052a-54a0-4aa1-8781-46a3507c12db",
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.1814bdd5-a8dd-410f-ae98-5c27fbe176b1"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHCIMD5K4ACNVXKXPHEYPZJAXJPNUKHMYC3MGEPSJ7M57LBW3NHTCB7ESMYTR4NDO6MLHT3S3B6CASZSHELFRORLPIALIR7GNSAUSYLC3U7KMSH6GU2C3SKTVVPQCRNIBHZSDUPB5P4J26LRXKWUER2UZN3Y"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.3efc8abb-c364-4ffc-9f7c-a70ec63ad480",
+    "timestamp": "2016-06-30T19:48:52Z",
+    "intent": {
+      "name": "HowMuchIntent",
+      "slots": {
+        "Ingredient": {
+          "name": "Ingredient",
+          "value": "peanut butter"
+        }
+      }
+    },
+    "locale": "en-US"
+  },
+  "version": "1.0"
+}

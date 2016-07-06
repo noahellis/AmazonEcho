@@ -1,6 +1,6 @@
 from __future__ import print_function
-
-ingredients = ['2 table spoons peanut butter', '1 table spoon jelly', 'two slices of bread']
+import json
+ingredients = ['two table spoons peanut butter', 'one table spoon jelly', 'two slices of bread']
 directions = ['spread peanut butter on one side of bread', 'spread jelly on one side of other piece of bread',
               'press the pieces of bread together so the peanut butter and jelly sides are together', 'enjoy']
 direction_index = 0
@@ -62,18 +62,21 @@ def on_intent(intent_request, session):
 
 
 
+
     if intent_name == "ReadNextIngredientIntent":
         return read_next_ingredient(intent, session)
     elif intent_name == "ReadAllIngredientsIntent":
         return read_all_ingredients(intent, session)
+    elif intent_name == "LaunchIntent":
+        return get_welcome_response()
     elif intent_name == "ReadNextDirectionIntent":
         return read_next_direction(intent, session)
     elif intent_name == "ReadPreviousDirectionIntent":
         return read_previous_direction(intent, session)
     elif intent_name == "ReadPreviousIngredientIntent":
         return read_previous_ingredient(intent, session)
-    # elif intent_name == "HowMuchIntent":
-    #     return how_much_ingredient(intent, session, )
+    elif intent_name == "HowMuchIntent":
+        return how_much_ingredient(intent, session)
     elif intent_name == "EndIntent":
         return handle_session_end_request()
     # else:
@@ -221,17 +224,23 @@ def read_previous_direction(intent, session):
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 def how_much_ingredient(intent, session):
-    intent_value = intent['slots']['value']
+    global ingredients
     card_title = intent['name']
     session_attributes = {}
     should_end_session = True
     reprompt_text = None
-    if any(intent_value in ingredients):
-        speech_output = "This recipe has " + intent_value
-    else:
+    intent_value = intent['slots']['Ingredient']['value']
+    isFound = False
+    for i in ingredients:
+        if intent_value in i:
+            speech_output = "This recipe has " + i
+            isFound = True
+    if not isFound:
         speech_output = "This ingredient is not in the recipe"
+
     return build_response(session_attributes, build_speechlet_response(
-		    card_title, speech_output, reprompt_text, should_end_session))
+        card_title, speech_output, reprompt_text, should_end_session))
+
 # --------------- Helpers that build all of the responses ----------------------
 
 
